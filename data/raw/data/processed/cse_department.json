@@ -1,0 +1,34 @@
+{
+  "department_name": "Computer Science and Engineering",
+  "about": "The Department of Computer Science and Engineering focuses on teaching and research in computing, software development, artificial intelligence, data science, and networking.",
+  "programs_offered": [
+    "B.Tech in Computer Science and Engineering",
+    "M.Tech in Computer Science",
+    "PhD in Computer Science"
+  ],
+  "laboratories": [
+    "Programming Lab",
+    "Data Structures Lab",
+    "Operating Systems Lab",
+    "Database Management Systems Lab",
+    "Artificial Intelligence Lab",
+    "Computer Networks Lab"
+  ],
+  "core_subjects": [
+    "Data Structures",
+    "Algorithms",
+    "Operating Systems",
+    "Database Management Systems",
+    "Computer Networks",
+    "Artificial Intelligence",
+    "Machine Learning"
+  ],
+  "career_opportunities": [
+    "Software Developer",
+    "Data Scientist",
+    "AI Engineer",
+    "System Analyst",
+    "Cybersecurity Analyst",
+    "Cloud Engineer"
+  ]
+}
