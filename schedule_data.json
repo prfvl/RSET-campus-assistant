@@ -1,0 +1,14 @@
+{
+  "events": [
+    {
+      "title": "Math Exam",
+      "date": "2026-03-06",
+      "time": "10:00"
+    },
+    {
+      "title": "AI Assignment",
+      "date": "2026-03-05",
+      "time": "21:00"
+    }
+  ]
+}
