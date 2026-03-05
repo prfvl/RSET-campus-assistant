@@ -1,9 +1,11 @@
+from schedule_manager import get_all_events, add_event
+
 print("Test started")
-from schedule_manager import ScheduleManager
 
-manager = ScheduleManager()
+print("Current events:")
+print(get_all_events())
 
-manager.add_event("DBMS Exam", "15 April", "10:00 AM")
-manager.add_event("AI Assignment", "10 April", "11:59 PM")
+add_event("ML Assignment", "20 April", "11:59 PM")
 
-print(manager.get_events())
+print("After adding event:")
+print(get_all_events())
