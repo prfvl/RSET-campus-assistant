@@ -1,19 +1,15 @@
-from schedule_service.schedule_manager import *
+from schedule_manager import get_all_events, add_event
 
 print("Test started")
 
-print("\nCurrent events:")
+print("Current events:")
 print(get_all_events())
 
-print("\nAdd a new event")
-
 title = input("Enter event title: ")
-date = input("Enter event date (YYYY-MM-DD): ")
+date = input("Enter event date: ")
 time = input("Enter event time: ")
 
 add_event(title, date, time)
 
-print("\nEvent added successfully!")
-
-print("\nUpdated events:")
+print("After adding event:")
 print(get_all_events())
