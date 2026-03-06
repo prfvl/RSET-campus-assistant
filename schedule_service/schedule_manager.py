@@ -1,21 +1,23 @@
 import json
 
-FILE_PATH = "schedule_service/schedule_data.json"
+DATA_FILE = "schedule_service/schedule_data.json"
 
+def load_events():
+    try:
+        with open(DATA_FILE, "r") as file:
+            return json.load(file)
+    except:
+        return []
 
-def load_schedule():
-    with open(FILE_PATH, "r") as file:
-        data = json.load(file)
-    return data["events"]
-
+def save_events(events):
+    with open(DATA_FILE, "w") as file:
+        json.dump(events, file, indent=4)
 
 def get_all_events():
-    return load_schedule()
-
+    return load_events()
 
 def add_event(title, date, time):
-
-    events = load_schedule()
+    events = load_events()
 
     new_event = {
         "title": title,
@@ -24,6 +26,6 @@ def add_event(title, date, time):
     }
 
     events.append(new_event)
+    save_events(events)
 
-    with open(FILE_PATH, "w") as file:
-        json.dump({"events": events}, file, indent=4)
+    return new_event
