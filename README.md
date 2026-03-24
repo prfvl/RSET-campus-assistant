@@ -17,7 +17,7 @@ An AI-powered campus assistant for Rajagiri School of Engineering and Technology
 
 - **Node.js** v18+ (for frontend)
 - **Python** 3.10+ (for backend)
-- **Ollama** with `tinyllama` model pulled (`ollama pull tinyllama`)
+- **Ollama** with `qwen` model pulled (`ollama pull qwen`)
 
 ### 1. Build the Vector Database
 
