@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RSET Campus Assistant — Project Structure</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;600;700&family=Inter:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #0d0e1a;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px;
+    font-family: 'JetBrains Mono', monospace;
+  }
+
+  .card {
+    background: linear-gradient(145deg, #1a1b2e 0%, #141524 100%);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 40px 48px;
+    max-width: 820px;
+    width: 100%;
+    box-shadow:
+      0 0 60px rgba(99, 102, 241, 0.08),
+      0 20px 60px rgba(0,0,0,0.4);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #6366f1, #8b5cf6, #a78bfa, #6366f1);
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+
+  @keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+  }
+
+  .header {
+    margin-bottom: 32px;
+    text-align: center;
+  }
+
+  .header h1 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: 22px;
+    color: #ffffff;
+    letter-spacing: -0.5px;
+    margin-bottom: 6px;
+  }
+
+  .header .subtitle {
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 400;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .tree {
+    font-size: 13.5px;
+    line-height: 1.85;
+  }
+
+  .line {
+    white-space: nowrap;
+    display: flex;
+    align-items: baseline;
+  }
+
+  .branch {
+    color: #3b3d52;
+    user-select: none;
+  }
+
+  .folder {
+    color: #e5c07b;
+    font-weight: 600;
+  }
+
+  .py    { color: #61afef; }
+  .json  { color: #98c379; }
+  .txt   { color: #d19a66; }
+  .jsx   { color: #56b6c2; }
+  .css   { color: #c678dd; }
+  .html  { color: #e06c75; }
+  .svg   { color: #8b929e; }
+  .md    { color: #abb2bf; }
+  .js    { color: #e5c07b; }
+  .lock  { color: #5c6370; }
+  .faiss { color: #61afef; }
+  .pkl   { color: #d19a66; }
+
+  .annotation {
+    color: #4b5563;
+    font-size: 12px;
+    margin-left: 12px;
+    font-weight: 400;
+  }
+
+  .icon {
+    display: inline-block;
+    width: 18px;
+    text-align: center;
+    margin-right: 6px;
+    font-style: normal;
+  }
+
+  .section-gap {
+    height: 4px;
+  }
+</style>
+</head>
+<body>
+
+<div class="card">
+  <div class="header">
+    <h1>🎓 RSET Campus Assistant</h1>
+    <div class="subtitle">Project File Structure</div>
+  </div>
+
+  <div class="tree">
+
+    <div class="line"><span class="folder"><i class="icon">📁</i>RSET-campus-assistant/</span></div>
+
+    <div class="line"><span class="branch">├── </span><span class="md"><i class="icon">📄</i>README.md</span></div>
+
+    <!-- ── backend/ ──────────────────────────────── -->
+    <div class="line"><span class="branch">├── </span><span class="folder"><i class="icon">📁</i>backend/</span></div>
+    <div class="line"><span class="branch">│   ├── </span><span class="py"><i class="icon">🐍</i>server.py</span><span class="annotation">← FastAPI Server</span></div>
+    <div class="line"><span class="branch">│   ├── </span><span class="py"><i class="icon">🐍</i>router_agent.py</span><span class="annotation">← Router Agent (LLM routing)</span></div>
+    <div class="line"><span class="branch">│   ├── </span><span class="py"><i class="icon">🐍</i>rag_agent.py</span><span class="annotation">← RAG Agent wrapper</span></div>
+    <div class="line"><span class="branch">│   ├── </span><span class="py"><i class="icon">🐍</i>schedule_agent.py</span><span class="annotation">← Schedule Agent</span></div>
+    <div class="line"><span class="branch">│   ├── </span><span class="py"><i class="icon">🐍</i>notification_agent.py</span><span class="annotation">← Notification Agent</span></div>
+    <div class="line"><span class="branch">│   ├── </span><span class="py"><i class="icon">🐍</i>notification_service.py</span></div>
+    <div class="line"><span class="branch">│   ├── </span><span class="txt"><i class="icon">📄</i>requirements.txt</span></div>
+
+    <div class="section-gap"></div>
+
+    <!-- data/ -->
+    <div class="line"><span class="branch">│   ├── </span><span class="folder"><i class="icon">📁</i>data/</span></div>
+    <div class="line"><span class="branch">│   │   └── </span><span class="folder"><i class="icon">📁</i>processed/</span></div>
+    <div class="line"><span class="branch">│   │       ├── </span><span class="json"><i class="icon">📋</i>faq.json</span><span class="annotation">← Campus FAQ data</span></div>
+    <div class="line"><span class="branch">│   │       └── </span><span class="json"><i class="icon">📋</i>cse_department.json</span><span class="annotation">← CSE Department info</span></div>
+
+    <div class="section-gap"></div>
+
+    <!-- rag/ -->
+    <div class="line"><span class="branch">│   ├── </span><span class="folder"><i class="icon">📁</i>rag/</span><span class="annotation">← RAG Pipeline</span></div>
+    <div class="line"><span class="branch">│   │   ├── </span><span class="py"><i class="icon">🐍</i>build_vector_db.py</span><span class="annotation">← Builds FAISS vector index</span></div>
+    <div class="line"><span class="branch">│   │   ├── </span><span class="py"><i class="icon">🐍</i>query_rag.py</span><span class="annotation">← RAG query pipeline</span></div>
+    <div class="line"><span class="branch">│   │   ├── </span><span class="txt"><i class="icon">📄</i>questions.txt</span><span class="annotation">← Sample test questions</span></div>
+    <div class="line"><span class="branch">│   │   └── </span><span class="folder"><i class="icon">📁</i>vector_store/</span></div>
+    <div class="line"><span class="branch">│   │       ├── </span><span class="faiss"><i class="icon">🗂️</i>index.faiss</span><span class="annotation">← FAISS vector index</span></div>
+    <div class="line"><span class="branch">│   │       └── </span><span class="pkl"><i class="icon">🗂️</i>index.pkl</span><span class="annotation">← Serialized metadata</span></div>
+
+    <div class="section-gap"></div>
+
+    <!-- schedule_service/ -->
+    <div class="line"><span class="branch">│   └── </span><span class="folder"><i class="icon">📁</i>schedule_service/</span></div>
+    <div class="line"><span class="branch">│       ├── </span><span class="py"><i class="icon">🐍</i>__init__.py</span></div>
+    <div class="line"><span class="branch">│       ├── </span><span class="json"><i class="icon">📋</i>schedule_data.json</span></div>
+    <div class="line"><span class="branch">│       └── </span><span class="py"><i class="icon">🐍</i>schedule_manager.py</span></div>
+
+    <div class="section-gap"></div>
+
+    <!-- ── frontend/ ─────────────────────────────── -->
+    <div class="line"><span class="branch">└── </span><span class="folder"><i class="icon">📁</i>frontend/</span></div>
+    <div class="line"><span class="branch">    ├── </span><span class="html"><i class="icon">🌐</i>index.html</span></div>
+    <div class="line"><span class="branch">    ├── </span><span class="json"><i class="icon">📋</i>package.json</span></div>
+    <div class="line"><span class="branch">    ├── </span><span class="js"><i class="icon">⚙️</i>vite.config.js</span></div>
+    <div class="line"><span class="branch">    ├── </span><span class="js"><i class="icon">⚙️</i>eslint.config.js</span></div>
+    <div class="line"><span class="branch">    ├── </span><span class="folder"><i class="icon">📁</i>public/</span></div>
+    <div class="line"><span class="branch">    │   └── </span><span class="svg"><i class="icon">🖼️</i>vite.svg</span></div>
+    <div class="line"><span class="branch">    └── </span><span class="folder"><i class="icon">📁</i>src/</span></div>
+    <div class="line"><span class="branch">        ├── </span><span class="jsx"><i class="icon">⚛️</i>main.jsx</span></div>
+    <div class="line"><span class="branch">        ├── </span><span class="jsx"><i class="icon">⚛️</i>App.jsx</span><span class="annotation">← Main React component</span></div>
+    <div class="line"><span class="branch">        ├── </span><span class="css"><i class="icon">🎨</i>App.css</span></div>
+    <div class="line"><span class="branch">        ├── </span><span class="css"><i class="icon">🎨</i>index.css</span></div>
+    <div class="line"><span class="branch">        └── </span><span class="folder"><i class="icon">📁</i>assets/</span></div>
+    <div class="line"><span class="branch">            └── </span><span class="svg"><i class="icon">🖼️</i>react.svg</span></div>
+
+  </div>
+</div>
+
+</body>
+</html>

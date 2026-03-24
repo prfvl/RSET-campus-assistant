@@ -1,2 +1,22 @@
+# Dependencies
+node_modules/
 __pycache__/
 *.pyc
+
+# Environment
+.env
+backend/.env
+
+# Vector store (generated, rebuild with build_vector_db.py)
+backend/rag/vector_store/
+
+# Build output
+frontend/dist/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
